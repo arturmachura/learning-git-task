@@ -11,3 +11,5 @@ total_products = sum(len(products) for products in shopping.values())
 print(f"W sumie kupuję {total_products} produktów.")
 
 # commit_2
+
+# commit_3
