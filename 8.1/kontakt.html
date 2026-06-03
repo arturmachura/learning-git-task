@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur Machura – Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">O mnie</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h1>Kontakt</h1>
+
+            <h2>Dane kontaktowe</h2>
+            <ul>
+                <li>📧 E-mail: <strong>artur.machura@soflab.pl</strong></li>
+                <li>💼 Firma: <strong>Soflab Technology Sp. z o.o.</strong></li>
+                <li>📍 Lokalizacja: <strong>Polska</strong></li>
+                <li>💻 GitHub: <strong><a href="https://github.com/arturmachura" target="_blank">github.com/arturmachura</a></strong></li>
+            </ul>
+
+            <h2>Napisz do mnie</h2>
+            <form>
+                <label for="imie">Imię i nazwisko</label>
+                <input type="text" id="imie" name="imie" placeholder="Jan Kowalski">
+
+                <label for="email">Adres e-mail</label>
+                <input type="email" id="email" name="email" placeholder="jan@example.com">
+
+                <label for="temat">Temat</label>
+                <input type="text" id="temat" name="temat" placeholder="W czym mogę pomóc?">
+
+                <label for="wiadomosc">Wiadomość</label>
+                <textarea id="wiadomosc" name="wiadomosc" rows="6"
+                          placeholder="Napisz kilka słów..."></textarea>
+
+                <button type="submit">Wyślij wiadomość</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
