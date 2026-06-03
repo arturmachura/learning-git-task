@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Kontakt{% endblock %}
+
+{% block content %}
+<h3>Dane kontaktowe</h3>
+<ul>
+    <li>📧 E-mail: <strong>artur.machura@soflab.pl</strong></li>
+    <li>💼 Firma: <strong>Soflab Technology Sp. z o.o.</strong></li>
+    <li>📍 Lokalizacja: <strong>Polska</strong></li>
+    <li>💻 GitHub: <strong><a href="https://github.com/arturmachura" target="_blank">github.com/arturmachura</a></strong></li>
+</ul>
+
+<h3>Napisz do mnie</h3>
+<form method="POST" action="/mypage/contact">
+    <label for="imie">Imię i nazwisko</label>
+    <input type="text" id="imie" name="imie" placeholder="Jan Kowalski">
+
+    <label for="email">Adres e-mail</label>
+    <input type="email" id="email" name="email" placeholder="jan@example.com">
+
+    <label for="temat">Temat</label>
+    <input type="text" id="temat" name="temat" placeholder="W czym mogę pomóc?">
+
+    <label for="wiadomosc">Wiadomość</label>
+    <textarea id="wiadomosc" name="wiadomosc" rows="6"
+              placeholder="Napisz kilka słów..."></textarea>
+
+    <button type="submit">Wyślij wiadomość</button>
+</form>
+{% endblock %}

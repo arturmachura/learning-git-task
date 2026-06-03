@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur Machura – {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/mypage/me">O mnie</a>
+        <a href="/mypage/contact">Kontakt</a>
+    </nav>
+
+    <main>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tesla_circa_1890.jpeg"
+                 alt="Nikola Tesla"
+                 class="avatar">
+
+            <h1>Artur Machura</h1>
+            <h2>Technical Consultant – Observability &amp; Performance</h2>
+
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</body>
+</html>
