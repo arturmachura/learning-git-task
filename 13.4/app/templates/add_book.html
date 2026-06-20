@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Dodaj książkę{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Dodaj książkę</h2>
+<form method="POST" style="max-width: 560px;">
+  <div class="mb-3">
+    <label class="form-label">Tytuł *</label>
+    <input type="text" name="title" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Rok wydania</label>
+    <input type="number" name="year" class="form-control" min="1000" max="2100">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">ISBN</label>
+    <input type="text" name="isbn" class="form-control" placeholder="opcjonalnie">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Autorzy</label>
+    {% if authors %}
+      <select name="author_ids" class="form-select" multiple size="{{ [authors|length, 6]|min }}">
+        {% for author in authors %}
+          <option value="{{ author.id }}">{{ author }}</option>
+        {% endfor %}
+      </select>
+      <div class="form-text">Przytrzymaj Ctrl (lub Cmd), by wybrać kilku.</div>
+    {% else %}
+      <p class="text-muted">Brak autorów. <a href="/authors/add">Dodaj autora</a> przed dodaniem książki.</p>
+    {% endif %}
+  </div>
+  <button type="submit" class="btn btn-primary">Zapisz</button>
+  <a href="/" class="btn btn-outline-secondary ms-2">Anuluj</a>
+</form>
+{% endblock %}
