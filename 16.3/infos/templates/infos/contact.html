@@ -1,0 +1,28 @@
+{% extends "infos/base.html" %}
+
+{% block title %}Portfolio - Contact{% endblock %}
+
+{% block content %}
+    <h1>Contact me</h1>
+    <p>Email: artur.machura@example.com</p>
+    <p>City: Warsaw, Poland</p>
+
+    <form action="{% url 'contact' %}">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+
+    {% if request.GET.message %}
+        <p><strong>Thanks, {{ request.GET.name }}! Your message was received (not really saved anywhere).</strong></p>
+    {% endif %}
+
+    <p><a href="{% url 'home' %}">&larr; Back to home</a></p>
+{% endblock %}

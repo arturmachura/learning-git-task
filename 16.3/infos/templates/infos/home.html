@@ -1,0 +1,15 @@
+{% extends "infos/base.html" %}
+
+{% block title %}Portfolio - Home{% endblock %}
+
+{% block content %}
+    <h1>Welcome to my portfolio</h1>
+    <p>
+        This site is a small showcase built while learning Django. Here you'll find
+        a short bio about me and a way to get in touch.
+    </p>
+    <ul>
+        <li><a href="{% url 'me' %}">Learn more about me</a></li>
+        <li><a href="{% url 'contact' %}">Get in touch</a></li>
+    </ul>
+{% endblock %}
