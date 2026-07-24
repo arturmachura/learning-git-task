@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
+from django.utils.html import escape
 
 
 def hello_world(request):
@@ -6,4 +7,6 @@ def hello_world(request):
 
 
 def hello_name(request, name):
-    return HttpResponse(f"Hello {name.capitalize()}!")
+    if not name.isalpha():
+        return HttpResponseBadRequest("Name must contain only letters.")
+    return HttpResponse(f"Hello {escape(name.capitalize())}!")
