@@ -1,0 +1,23 @@
+{% extends "posts/base.html" %}
+
+{% block title %}Posts list{% endblock %}
+
+{% block content %}
+    <h1>Posts</h1>
+    <ul>
+        {% for post in posts %}
+            <li><a href="{% url 'posts:post_details' pk=post.pk %}">{{ post.title }}</a> &mdash; {{ post.author }}</li>
+        {% empty %}
+            <li>No posts yet.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add a new post</h2>
+    <form method="post">
+        {% csrf_token %}
+        <table class="post-form">
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Create post">
+    </form>
+{% endblock %}

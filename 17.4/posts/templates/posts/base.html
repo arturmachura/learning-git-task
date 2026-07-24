@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Posts{% endblock %}</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #f4f4f4; color: #222; }
+        header { background: #2c3e50; padding: 1rem 2rem; }
+        nav a { color: #ecf0f1; text-decoration: none; margin-right: 1.5rem; font-weight: bold; }
+        main { max-width: 700px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        ul.messages { list-style: none; padding: 0; }
+        ul.messages li { padding: 0.5rem 1rem; border-radius: 4px; margin-bottom: 0.5rem; }
+        ul.messages li.success { background: #d4edda; color: #155724; }
+        ul.messages li.error { background: #f8d7da; color: #721c24; }
+        table.post-form th { text-align: left; vertical-align: top; padding: 0.3rem; }
+        table.post-form td { padding: 0.3rem; }
+        table.post-form input, table.post-form textarea, table.post-form select { width: 100%; box-sizing: border-box; }
+        ul.errorlist { color: #b00020; list-style: none; padding: 0; }
+        .post-entry { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="{% url 'posts:posts_list' %}">Posts</a>
+        <a href="{% url 'posts:authors_list' %}">Authors</a>
+    </nav>
+</header>
+<main>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>
