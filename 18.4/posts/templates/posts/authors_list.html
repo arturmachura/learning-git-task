@@ -1,0 +1,23 @@
+{% extends "posts/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}Authors list{% endblock %}
+
+{% block posts_content %}
+    <ul class="list-group mb-3">
+        {% for author in authors %}
+            <li class="list-group-item">
+                <a href="{% url 'posts:author_details' pk=author.pk %}">{{ author.email }}</a>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No authors yet.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add a new author</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">Create author</button>
+    </form>
+{% endblock %}

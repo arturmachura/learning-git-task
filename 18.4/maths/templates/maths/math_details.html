@@ -1,0 +1,9 @@
+{% extends "maths/main.html" %}
+
+{% block title %}{{ math }}{% endblock %}
+
+{% block maths_content %}
+    <p>{{ math }}</p>
+    <p>Result: {{ math.result }}</p>
+    <p><a href="{% url 'maths:histories' %}">&larr; Back to histories</a></p>
+{% endblock %}
