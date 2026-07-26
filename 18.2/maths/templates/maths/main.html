@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Maths{% endblock %}</title>
+</head>
+<body>
+<div id="content">
+    <div id="header">
+        <a href="{% url 'maths:math' %}">Maths</a> |
+        <a href="{% url 'maths:histories' %}">Histories</a> |
+        <a href="{% url 'maths:results' %}">Results</a>
+    </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div id="inner-content">
+        {% block content %}
+            To jest blok kodu. W innych szablonach możemy go nadpisać
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

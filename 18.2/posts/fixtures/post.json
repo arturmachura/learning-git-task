@@ -1,0 +1,46 @@
+[
+{
+    "model": "posts.post",
+    "pk": 1,
+    "fields": {
+        "title": "Getting started with Django",
+        "content": "Django is a high-level Python web framework that encourages rapid development.",
+        "created": "2026-07-24T20:35:10.252Z",
+        "modified": "2026-07-24T20:35:10.252Z",
+        "author": 1
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 2,
+    "fields": {
+        "title": "Understanding the ORM",
+        "content": "The ORM lets you query your database using Python instead of raw SQL.",
+        "created": "2026-07-24T20:35:10.270Z",
+        "modified": "2026-07-24T20:35:10.270Z",
+        "author": 1
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 3,
+    "fields": {
+        "title": "Why I switched to Python",
+        "content": "Python's readability and ecosystem make it a great choice for web development.",
+        "created": "2026-07-24T20:35:10.275Z",
+        "modified": "2026-07-24T20:35:10.275Z",
+        "author": 2
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 4,
+    "fields": {
+        "title": "Testing forms in Django",
+        "content": "Created via curl POST to verify PostForm works.",
+        "created": "2026-07-24T20:45:54.987Z",
+        "modified": "2026-07-24T20:45:54.987Z",
+        "author": 2
+    }
+}
+]

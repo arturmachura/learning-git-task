@@ -1,0 +1,11 @@
+{% extends "maths/main.html" %}
+
+{% block title %}Maths list{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for m in maths %}
+            <li><a href="{% url 'maths:math_details' pk=m.pk %}">{{ m }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

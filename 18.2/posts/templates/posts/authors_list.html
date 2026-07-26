@@ -1,0 +1,23 @@
+{% extends "posts/base.html" %}
+
+{% block title %}Authors list{% endblock %}
+
+{% block content %}
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors %}
+            <li><a href="{% url 'posts:author_details' pk=author.pk %}">{{ author.email }}</a></li>
+        {% empty %}
+            <li>No authors yet.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add a new author</h2>
+    <form method="post">
+        {% csrf_token %}
+        <table class="post-form">
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Create author">
+    </form>
+{% endblock %}
