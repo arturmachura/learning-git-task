@@ -90,6 +90,12 @@ button:hover {
     background-color: #2c5282;
 }
 
+.error {
+    background: #fff5f5;
+    border-left: 4px solid #e53e3e;
+    color: #9b2c2c;
+}
+
 .result {
     margin-top: 24px;
     padding: 20px;

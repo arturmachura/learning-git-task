@@ -13,6 +13,12 @@
     </header>
 
     <main>
+        {% if error %}
+        <div class="card error">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+
         <div class="card">
             <form method="POST" action="/">
                 <label for="currency">Waluta</label>
