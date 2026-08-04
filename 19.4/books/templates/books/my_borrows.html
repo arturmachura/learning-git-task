@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}My Borrows{% endblock %}
+
+{% block content %}
+    <h1>My Borrows</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Borrowed at</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for borrow in borrows %}
+                <tr>
+                    <td><a href="{% url 'books:book_details' pk=borrow.book.pk %}">{{ borrow.book.title }}</a></td>
+                    <td>{{ borrow.borrowed_at }}</td>
+                    <td>
+                        {% if borrow.is_returned %}
+                            <span class="badge bg-success">Returned</span>
+                        {% else %}
+                            <span class="badge bg-warning text-dark">Borrowed</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if not borrow.is_returned %}
+                            <form method="post" class="float-end">
+                                {% csrf_token %}
+                                <input type="hidden" name="borrow_id" value="{{ borrow.id }}">
+                                <button class="btn btn-success btn-sm">Return</button>
+                            </form>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="4">You haven't borrowed any books yet.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

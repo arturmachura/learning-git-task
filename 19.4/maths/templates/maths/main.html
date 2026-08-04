@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title|default:"Maths" }}{% endblock %}
+
+{% block content %}
+    <h1>Maths</h1>
+    <p>
+        <a href="{% url 'maths:histories' %}">Histories</a> |
+        <a href="{% url 'maths:results' %}">Results</a>
+    </p>
+    {% block maths_content %}{% endblock %}
+{% endblock %}

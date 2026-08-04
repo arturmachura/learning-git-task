@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h1>Login</h1>
+
+            {% if form.errors %}
+                <div class="alert alert-danger">Your username and password didn't match. Please try again.</div>
+            {% endif %}
+
+            {% if next %}
+                {% if user.is_authenticated %}
+                    <div class="alert alert-warning">Your account doesn't have access to this page.</div>
+                {% else %}
+                    <div class="alert alert-info">Please login to see this page.</div>
+                {% endif %}
+            {% endif %}
+
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <button type="submit" class="btn btn-primary">Login</button>
+                <input type="hidden" name="next" value="{{ next }}">
+            </form>
+        </div>
+    </div>
+{% endblock %}

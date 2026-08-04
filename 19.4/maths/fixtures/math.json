@@ -1,0 +1,167 @@
+[
+{
+    "model": "maths.math",
+    "pk": 1,
+    "fields": {
+        "operation": "add",
+        "a": 1,
+        "b": 2,
+        "created": "2026-07-26T20:52:12.252Z",
+        "result": 1
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 2,
+    "fields": {
+        "operation": "add",
+        "a": 3,
+        "b": 4,
+        "created": "2026-07-26T20:52:12.260Z",
+        "result": 2
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 3,
+    "fields": {
+        "operation": "sub",
+        "a": 20,
+        "b": 30,
+        "created": "2026-07-26T20:52:12.268Z",
+        "result": 3
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 4,
+    "fields": {
+        "operation": "sub",
+        "a": 5,
+        "b": 2,
+        "created": "2026-07-26T20:52:12.273Z",
+        "result": 1
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 5,
+    "fields": {
+        "operation": "mul",
+        "a": 6,
+        "b": 7,
+        "created": "2026-07-26T20:52:12.278Z",
+        "result": 4
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 6,
+    "fields": {
+        "operation": "mul",
+        "a": 2,
+        "b": 9,
+        "created": "2026-07-26T20:52:12.286Z",
+        "result": 5
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 7,
+    "fields": {
+        "operation": "div",
+        "a": 10,
+        "b": 2,
+        "created": "2026-07-26T20:52:12.292Z",
+        "result": 6
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 8,
+    "fields": {
+        "operation": "div",
+        "a": 9,
+        "b": 3,
+        "created": "2026-07-26T20:52:12.297Z",
+        "result": 1
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 9,
+    "fields": {
+        "operation": "div",
+        "a": 8,
+        "b": 0,
+        "created": "2026-07-26T20:52:12.305Z",
+        "result": 7
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 10,
+    "fields": {
+        "operation": "add",
+        "a": 100,
+        "b": 200,
+        "created": "2026-07-26T20:53:00.000Z",
+        "result": null
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 11,
+    "fields": {
+        "operation": "sub",
+        "a": 50,
+        "b": 15,
+        "created": "2026-07-26T20:53:01.000Z",
+        "result": null
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 12,
+    "fields": {
+        "operation": "mul",
+        "a": 12,
+        "b": 12,
+        "created": "2026-07-26T20:53:02.000Z",
+        "result": null
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 13,
+    "fields": {
+        "operation": "div",
+        "a": 45,
+        "b": 5,
+        "created": "2026-07-26T20:53:03.000Z",
+        "result": null
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 14,
+    "fields": {
+        "operation": "add",
+        "a": 7,
+        "b": 8,
+        "created": "2026-07-26T20:53:04.000Z",
+        "result": null
+    }
+},
+{
+    "model": "maths.math",
+    "pk": 15,
+    "fields": {
+        "operation": "sub",
+        "a": 99,
+        "b": 1,
+        "created": "2026-07-26T20:53:05.000Z",
+        "result": null
+    }
+}
+]

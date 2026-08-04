@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Posts</h1>
+    <p>
+        <a href="{% url 'posts:posts_list' %}">Posts</a> |
+        <a href="{% url 'posts:authors_list' %}">Authors</a>
+    </p>
+    {% block posts_content %}{% endblock %}
+{% endblock %}

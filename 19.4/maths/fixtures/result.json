@@ -1,0 +1,58 @@
+[
+{
+    "model": "maths.result",
+    "pk": 1,
+    "fields": {
+        "value": 3.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 2,
+    "fields": {
+        "value": 7.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 3,
+    "fields": {
+        "value": -10.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 4,
+    "fields": {
+        "value": 42.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 5,
+    "fields": {
+        "value": 18.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 6,
+    "fields": {
+        "value": 5.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 7,
+    "fields": {
+        "value": null,
+        "error": "ZeroDivisionError"
+    }
+}
+]
