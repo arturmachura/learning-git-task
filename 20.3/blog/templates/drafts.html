@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Szkice</h3>
+
+<table class="table">
+   <thead>
+     <tr>
+       <th scope="col">Data</th>
+       <th scope="col">Tytuł</th>
+       <th scope="col">Treść</th>
+       <th scope="col"></th>
+     </tr>
+   </thead>
+   <tbody>
+       {% for post in drafts %}
+     <tr>
+       <td>
+           {{ post.pub_date.strftime('%Y-%m-%d') }}
+       </td>
+       <td>
+           <a href="{{ url_for('edit_entry', entry_id=post.id) }}">
+               {{ post.title }}
+           </a>
+       </td>
+       <td>{{ post.body|truncate(100, true) }}</td>
+       <td>
+           <form action="{{ url_for('delete_entry', entry_id=post.id) }}" method="POST"
+                 onsubmit="return confirm('Usunąć ten wpis?');">
+               <button type="submit" class="btn btn-danger btn-sm">Usuń</button>
+           </form>
+       </td>
+     </tr>
+     {% else %}
+     <tr>
+       <td colspan="4">Brak szkiców.</td>
+     </tr>
+     {% endfor %}
+   </tbody>
+ </table>
+
+{% endblock %}
