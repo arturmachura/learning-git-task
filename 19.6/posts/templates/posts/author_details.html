@@ -1,0 +1,21 @@
+{% extends "posts/base.html" %}
+
+{% block title %}{{ author.email }}{% endblock %}
+
+{% block posts_content %}
+    <h2>{{ author.email }}</h2>
+    <p>{{ author.bio|default:"No bio yet." }}</p>
+
+    <h3>Posts by this author</h3>
+    <ul class="list-group mb-3">
+        {% for post in author.posts.all %}
+            <li class="list-group-item">
+                <a href="{% url 'posts:post_details' pk=post.pk %}">{{ post.title }}</a>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No posts yet.</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{% url 'posts:authors_list' %}">&larr; Back to authors</a></p>
+{% endblock %}

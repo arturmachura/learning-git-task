@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <h1 class="display-5 fw-bold">Welcome to Dingo!</h1>
+        <p class="col-md-8 fs-4">
+            This is a small Django playground built while learning the framework.
+            Use the menu above to explore what's inside.
+        </p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">About</h5>
+                    <p class="card-text">A few words about who built this.</p>
+                    <a href="{% url 'about' %}" class="btn btn-primary">Go to about</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Maths</h5>
+                    <p class="card-text">History of calculator operations, paginated.</p>
+                    <a href="{% url 'maths:histories' %}" class="btn btn-primary">View history</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Posts</h5>
+                    <p class="card-text">A tiny blog with authors and posts.</p>
+                    <a href="{% url 'posts:posts_list' %}" class="btn btn-primary">View posts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

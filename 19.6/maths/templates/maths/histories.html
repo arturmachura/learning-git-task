@@ -1,0 +1,56 @@
+{% extends "maths/main.html" %}
+
+{% block title %}Maths list{% endblock %}
+
+{% block maths_content %}
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-auto">
+            <select name="operation" class="form-select">
+                <option value="">All operations</option>
+                <option value="add" {% if operation == "add" %}selected{% endif %}>add</option>
+                <option value="sub" {% if operation == "sub" %}selected{% endif %}>sub</option>
+                <option value="mul" {% if operation == "mul" %}selected{% endif %}>mul</option>
+                <option value="div" {% if operation == "div" %}selected{% endif %}>div</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-secondary">Filter</button>
+        </div>
+    </form>
+
+    <ul class="list-group mb-3">
+        {% for m in maths %}
+            <li class="list-group-item">
+                <a href="{% url 'maths:math_details' pk=m.pk %}">{{ m }}</a>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No entries yet.</li>
+        {% endfor %}
+    </ul>
+
+    {% if maths.has_other_pages %}
+        <nav>
+            <ul class="pagination">
+                {% if maths.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1{% if operation %}&operation={{ operation }}{% endif %}">&laquo; first</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ maths.previous_page_number }}{% if operation %}&operation={{ operation }}{% endif %}">previous</a>
+                    </li>
+                {% endif %}
+                <li class="page-item disabled">
+                    <span class="page-link">Page {{ maths.number }} of {{ maths.paginator.num_pages }}</span>
+                </li>
+                {% if maths.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ maths.next_page_number }}{% if operation %}&operation={{ operation }}{% endif %}">next</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ maths.paginator.num_pages }}{% if operation %}&operation={{ operation }}{% endif %}">last &raquo;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+{% endblock %}
